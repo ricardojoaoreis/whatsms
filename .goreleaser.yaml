@@ -28,7 +28,7 @@ nfpms:
     license: "MIT"
     
 archives:
-  - tar.gz
+  - formats: [ 'tar.gz' ]
 
 checksum:
   name_template: 'checksums.txt'
