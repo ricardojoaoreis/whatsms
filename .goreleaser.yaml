@@ -1,6 +1,6 @@
 version: 2
 
-project_name: fwdlio
+project_name: whatsms
 
 before:
   hooks:
@@ -12,21 +12,19 @@ builds:
       - CGO_ENABLED=0
     goos:
       - linux
-      - windows
-      - darwin
 
 nfpms:
   -
-    id: fwdlio
-    package_name: fwdlio
+    id: whatsms
+    package_name: whatsms
     formats:
       - apk
     contents:
       - src: ./public/**/*
-        dst: /usr/share/fwdlio/public
+        dst: /usr/share/whatsms/public
     
-    maintainer: "Patresi <patresi@example.com>"
-    description: "Simple Go WebUI"
+    maintainer: "Ricardo Reis <ricardojoaoreis@gmail.com>"
+    description: "WhatSMS, a simple SMS gateway using ModemManager via D-Bus"
     license: "MIT"
     
 archives:
@@ -37,7 +35,6 @@ archives:
       {{ .ProjectName }}_
       {{- title .Os }}_
       {{- if eq .Arch "amd64" }}x86_64
-      {{- else if eq .Arch "386" }}i386
       {{- else }}{{ .Arch }}{{ end }}
       {{- if .Arm }}v{{ .Arm }}{{ end }}
 
