@@ -20,7 +20,7 @@ nfpms:
     formats:
       - apk
     contents:
-      - src: ./public/**/*
+      - src: public/**/*
         dst: /usr/share/whatsms/public
     
     maintainer: "Ricardo Reis <ricardojoaoreis@gmail.com>"
@@ -28,15 +28,7 @@ nfpms:
     license: "MIT"
     
 archives:
-  - format: tar.gz
-    # this name template makes the archive name compatible with the default
-    # goreleaser name template
-    name_template: >-
-      {{ .ProjectName }}_
-      {{- title .Os }}_
-      {{- if eq .Arch "amd64" }}x86_64
-      {{- else }}{{ .Arch }}{{ end }}
-      {{- if .Arm }}v{{ .Arm }}{{ end }}
+  - tar.gz
 
 checksum:
   name_template: 'checksums.txt'
