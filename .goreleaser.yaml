@@ -20,7 +20,7 @@ nfpms:
     formats:
       - apk
     contents:
-      - src: public/**/*
+      - src: public/*
         dst: /usr/share/whatsms/public
     
     maintainer: "Ricardo Reis <ricardojoaoreis@gmail.com>"
