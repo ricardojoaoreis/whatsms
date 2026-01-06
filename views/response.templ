@@ -1,0 +1,33 @@
+package views
+
+templ Success(msg string) {
+    <div class="text-center py-8">
+        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+        </div>
+        <h2 class="text-xl font-bold text-gray-800 mb-2">Success!</h2>
+        <p class="text-gray-600 mb-6">{ msg }</p>
+        <button hx-get="/" hx-target="body" hx-swap="outerHTML" 
+            class="text-blue-600 hover:text-blue-700 font-medium hover:underline">
+            Back to Form
+        </button>
+    </div>
+}
+
+templ Error(msg string) {
+    <div class="text-center py-8">
+        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </div>
+        <h2 class="text-xl font-bold text-gray-800 mb-2">Error</h2>
+        <p class="text-gray-600 mb-6">{ msg }</p>
+        <button hx-get="/" hx-target="body" hx-swap="outerHTML" 
+            class="text-blue-600 hover:text-blue-700 font-medium hover:underline">
+            Try Again
+        </button>
+    </div>
+}
